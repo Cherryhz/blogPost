@@ -1,0 +1,21 @@
+{% extends "base" %}
+{% block posts %}
+    <div class="container">
+        <div class="row">
+            <h4> Write a new post... </h4>
+            <form action="/submitpost" method="post" id="draft">
+                <div class="five columns">
+                    <input type="text" placeholder="Title..." name="title" id="title" value="">
+                </div>
+                <div class="ten columns">
+                    <input type="text" placeholder="Content..." name="content" id="content" value="">
+                </div>
+                <div class="two columns">
+                    <form action="/publish" method="get" id="draft">
+                    </form>
+                    <button type="submit" form="draft" value="Draft"> Submit Draft </button>
+                </div>
+            </form>
+        </div> 
+    </div>
+{% endblock posts %}

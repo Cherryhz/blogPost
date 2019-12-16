@@ -1,0 +1,11 @@
+{% extends "base" %}
+{% block posts %}
+    <div class="container">
+        {% for post in posts %}
+            <div class="post_summary"> 
+                <p>{{ post.title }}</p>
+                <p>{{ post.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock posts %}
