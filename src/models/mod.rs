@@ -1,10 +1,9 @@
-#[macro_use]
-extern crate diesel;
-extern crate dotenv;
-extern crate rocket;
+//mod errors;
+//pub mod schema;
+mod user;
+pub mod post;
 
-pub mod schema;
-pub mod models;
+pub use user::{AuthUser, User};
 
 use diesel::prelude::*;
 use dotenv::dotenv;

@@ -2,17 +2,21 @@
 
 #[macro_use]
 extern crate rocket;
-extern crate diesel;
 
-//use self::my_blog::*;
+//#[macro_use]
+extern crate diesel;
+extern crate dotenv;
+extern crate my_blog;
+
 use rocket_contrib::templates::Template; 
 use rocket::request::Form;
 use rocket::response::{Flash, Redirect};
 //use rocket::fairing::AdHoc;
 use tera::Context;
 use diesel::prelude::*;
-use models::{Post, NewPost};
-use schema::posts::dsl::*;
+use my_blog::establish_connection;
+use my_blog::models::{post::*, User};
+use my_blog::schema::posts::dsl::*;
 use serde_derive::Serialize;
 use rocket_contrib::serve::StaticFiles;
 
